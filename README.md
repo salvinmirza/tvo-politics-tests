@@ -18,15 +18,20 @@ Run all tests in the Cypress UI:
 npx cypress open
 ```
 
-Run tests in headless mode with Mochawesome report:
+Run tests and view report:
 ```
-npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports/mochawesome,overwrite=false,html=true,json=true
+npm run test:with:report
 ```
 
 Run only SMOKE or REGRESSION tests (based on tags):
-To filter test types using `TestFilters`, temporarily comment or uncomment the relevant `TestFilters(['TAG'])` blocks inside the `politicsPageTest.spec.cy.js` file.
+
+```
+npm run test:smoke
+```
+
 
 ## Assumptions
 
 - Only the "Politics" section was in scope. No search, social media links TCs are added.
 - Cypress default browser is used; cross-browser and parallel support can be added via CLI or CI pipeline.
+- Not adding caseID from JIRA tickets
